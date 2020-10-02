@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawnController : MonoBehaviour
 {
     float timer;
-    float timerSpeeder = 0;
+    //float timerSpeeder = 0;
     public float speedSpeeder = -65f;
     public GameObject bulletPrefab;
 
@@ -20,11 +20,11 @@ public class EnemySpawnController : MonoBehaviour
     {
         timer += Time.deltaTime;
         EnemiesController bullet = FindObjectOfType<EnemiesController>();
-        timerSpeeder += 0.1f*Time.deltaTime;
+        //timerSpeeder += 0.1f*Time.deltaTime;
         speedSpeeder -= 2f*Time.deltaTime;
         
 
-        if ((timer >= 3f-timerSpeeder) && bullet == null)
+        if (timer >= 2f && bullet == null)
         {
             timer = 0;
             
