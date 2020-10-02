@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InterfazDeUsuario : MonoBehaviour
@@ -36,6 +37,7 @@ public class InterfazDeUsuario : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 LimpiarMensajeTecla();
+                SceneManager.LoadScene("SinglePlayerScene");
             }
         }
 

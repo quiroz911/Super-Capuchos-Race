@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Playerhit()
+    public void Playerhit()
     {
         Destroy(gameObject);
     }
