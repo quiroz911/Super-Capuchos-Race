@@ -20,7 +20,6 @@ public class EnemiesController : MonoBehaviour
     {
         speed = FindObjectOfType<EnemySpawnController>().speedSpeeder;
         avoidLetter = alphabet.Substring(Random.Range(0, 5), 1);
-        Debug.Log(avoidLetter);
     }
 
     // Update is called once per frame
