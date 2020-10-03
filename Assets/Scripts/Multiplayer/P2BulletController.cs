@@ -7,7 +7,6 @@ public class P2BulletController : MonoBehaviour
 {
     float speed = -15f;
     float coolDownTimer;
-    float speederTimer;
     float timer;
     string avoidLetter;
     bool inCoolDown;
@@ -45,6 +44,8 @@ public class P2BulletController : MonoBehaviour
                 gameObject.transform.position = new Vector3(41, -13, 0);
                 avoidLetterSelection();
                 avoidLetterText.text = avoidLetter;
+                //aumenta la velocidad para la próxima bala
+                speed -= 2f;
             }
             else
             {
@@ -81,6 +82,8 @@ public class P2BulletController : MonoBehaviour
         //muestra el mensaje de gameover
         gameOverText = GameObject.Find("P2GameOver").GetComponent<Text>();
         gameOverText.text = "Game Over Player 1 won!";
+        Destroy(GameObject.Find("MrPickle_0"));
+        Destroy(GameObject.Find("P2AvoidLetter"));
         Destroy(gameObject);
     }
 
