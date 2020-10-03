@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class P1BulletController : MonoBehaviour
+public class P2BulletController : MonoBehaviour
 {
     float speed = -15f;
     float coolDownTimer;
@@ -18,8 +18,8 @@ public class P1BulletController : MonoBehaviour
 
     void Start()
     {
-        avoidLetterText = GameObject.Find("P1AvoidLetter").GetComponent<Text>();
-        timerText = GameObject.Find("P1Tiempo").GetComponent<Text>();
+        avoidLetterText = GameObject.Find("P2AvoidLetter").GetComponent<Text>();
+        timerText = GameObject.Find("P2Tiempo").GetComponent<Text>();
         
 
         //configura el texto que muestra la letra para esquivar
@@ -42,7 +42,7 @@ public class P1BulletController : MonoBehaviour
             if (Input.GetKey(avoidLetter) && !inCoolDown)
             {
                 //devuelve la bala a la posición original y cambia la letra para esquivar
-                gameObject.transform.position = new Vector3(41, 16, 0);
+                gameObject.transform.position = new Vector3(41, -13, 0);
                 avoidLetterSelection();
                 avoidLetterText.text = avoidLetter;
             }
@@ -72,16 +72,16 @@ public class P1BulletController : MonoBehaviour
     //genera una letra al azar
     void avoidLetterSelection()
     {
-        string alphabet = "qwert";
+        string alphabet = "zxcvb";
         avoidLetter = alphabet.Substring(Random.Range(0, 5), 1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //muestra el mensaje de gameover
-        gameOverText = GameObject.Find("P1GameOver").GetComponent<Text>();
-        gameOverText.text = "Game Over Player 2 won!";
+        gameOverText = GameObject.Find("P2GameOver").GetComponent<Text>();
+        gameOverText.text = "Game Over Player 1 won!";
         Destroy(gameObject);
-    }   
+    }
 
 }
